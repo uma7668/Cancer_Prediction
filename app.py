@@ -16,13 +16,7 @@ loaded_model = pickle.load(open(model_path, 'rb'))
 def cancer_prediction(input_data):
     input_data_df = pd.DataFrame([input_data])
 
-    # Apply encoders
-    for column, encoder in loaded_encoders.items():
-        try:
-            input_data_df[column] = encoder.transform(input_data_df[[column]])
-        except Exception as e:
-            st.error(f"Encoding error in column '{column}': {e}")
-            return
+
 
     # Predict
     prediction = loaded_model.predict(input_data_df)
@@ -69,4 +63,5 @@ def main():
 # Run the app
 if __name__ == '__main__':
     main()
+
 
