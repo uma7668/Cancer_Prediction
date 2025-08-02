@@ -5,7 +5,7 @@ import streamlit as st
 
 # Load the model and encoders
 
-model_path = 'C:/Users/srini/Desktop/New folder/MachineLearning/Cancer_prediction/trained_model.pkl'
+model_path = 'trained_model.pkl'
 
 with open(model_path, 'rb') as file:
     loaded_model = pickle.load(file)
@@ -69,3 +69,4 @@ def main():
 # Run the app
 if __name__ == '__main__':
     main()
+
